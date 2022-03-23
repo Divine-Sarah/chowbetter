@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors')
 const bodyParser = require('body-parser');
+const authRoutes = require('./app/routes/auth.js')
 
 const app = express();
 
@@ -40,7 +41,8 @@ app.get('/', (req, res) => {
     res.json({message: 'Welcome to ChowBetter.'});
 })
 
-
+//API endpoints
+app.use('/api/auth', authRoutes);
 
 let PORT = process.env.PORT;
 
