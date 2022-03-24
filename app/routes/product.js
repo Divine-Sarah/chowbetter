@@ -2,12 +2,12 @@ const Product = require('../models/product');
 const routes = require('express').Router();
 
 //add a product
-routes.post("/product", async (req, res) => {
-    const {nameOfItem, dateHarvested, quantity,  possibleDateOfSpoilage, productImage} = req.body
+routes.post("/product", [], async (req, res) => {
+    const {nameOfItem, dateHarvested, quantity, possibleDateOfSpoilage, productImage, price} = req.body
     console.log('The request body', req.body)
 
     try {
-        if(!(nameOfItem && dateHarvested && quantity && possibleDateOfSpoilage && productImage)){
+        if(!(nameOfItem && dateHarvested && quantity && possibleDateOfSpoilage && productImage && price)){
             res.status(403).json({
                 message: 'Content cannot be empty!'
             })

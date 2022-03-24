@@ -22,7 +22,12 @@ const Product = mongoose.model(
   productImage:{
       type: String,
       required: true
-  }
+  },
+  price:{
+    type: String,
+    require:true
+  },
+  
   }, {timestamps: true})
 );
 
