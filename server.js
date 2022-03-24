@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const authRoutes = require('./app/routes/auth.js')
-const { TOKEN_KEY,MONGOOSE_URL }= require('./app/config/db.config')
+const { MONGOOSE_URL }= require('./app/config/db.config')
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(bodyParser.urlencoded({ extended: true}));
 
 //connect to moongosdb
-mongoose.connect(process.env.MONGOOSE_URL, {
+mongoose.connect(MONGOOSE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then((res) => {

@@ -3,6 +3,7 @@ const Farmer = require('../models/farmer.js')
 const routes = require('express').Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const { TOKEN_KEY} = require('../config/db.config')
 
 //Register User
 routes.post('/register', async (req, res) => {
@@ -65,7 +66,7 @@ routes.post('/login', async (req, res) => {
             !validPassword && res.status(400).json({message: 'Invalid credientials'})
 
             //Create token
-            var token = jwt.sign({user_id: user._id, user_phoneNumber: user._phoneNumber}, `${process.env.TOKEN_KEY}`, {expiresIn: 86400});
+            var token = jwt.sign({user_id: user._id, user_phoneNumber: user._phoneNumber}, `${TOKEN_KEY}`, {expiresIn: 86400});
             console.log('token: ', token);  
 
             res.status(200).json({message: 'User logged in successfully', user: user, token})
