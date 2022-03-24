@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const { stringify } = require("querystring");
 const { isNumberObject } = require("util/types");
 
-const User = mongoose.model(
-  'User', 
+const Product = mongoose.model(
+  'Product', 
   new mongoose.Schema({
     name: {
       type: String,
@@ -38,4 +37,4 @@ const User = mongoose.model(
   }, {timestamps: true})
 );
 
-module.exports = User;
+module.exports = Product;

@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
-const { stringify } = require("querystring");
-const { isNumberObject } = require("util/types");
 
-const User = mongoose.model(
-  'User', 
+const Farmer = mongoose.model(
+  'Farmer', 
   new mongoose.Schema({
     name: {
       type: String,
@@ -34,8 +32,13 @@ const User = mongoose.model(
     required: true,
     min: 8,
     unique: true
-  }
+  },
+  typeOfProduce: {
+    type: String,
+    required: true,
+  },
+
   }, {timestamps: true})
 );
 
-module.exports = User;
+module.exports = Farmer;

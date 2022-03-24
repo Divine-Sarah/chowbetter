@@ -27,11 +27,10 @@ app.use(bodyParser.urlencoded({ extended: true}));
 mongoose.connect(process.env.MONGOOSE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
-.then(() => {
-    console.log("Successfully connect to MongoDB.");
-})
-.catch(err => {
+}).then((res) => {
+    console.log("Successfully connected to MongoDB.");
+
+}).catch(err => {
     console.error("Connection error: ", err);
     process.exit();
 });
