@@ -10,7 +10,7 @@ const { MONGOOSE_URL }= require('./app/config/db.config')
 const app = express();
 
 let corsOptions = {
-    origin: 'http://localhost:8000',
+    origin: 'http://127.0.0.1:5500',
     methods: "GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS",
     credentials: true
 };
