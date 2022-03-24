@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const authRoutes = require('./app/routes/auth.js')
+const productRoutes = require('./app/routes/product.js')
 const { MONGOOSE_URL }= require('./app/config/db.config')
 
 const app = express();
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
 
 //API endpoints
 app.use('/api/auth', authRoutes);
+app.use('api/product',productRoutes )
 
 let PORT = process.env.PORT;
 

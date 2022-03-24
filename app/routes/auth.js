@@ -3,7 +3,7 @@ const Farmer = require('../models/farmer.js')
 const routes = require('express').Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { TOKEN_KEY} = require('../config/db.config')
+const { TOKEN_KEY} = require('../config/db.config.js');
 
 //Register User
 routes.post('/register', async (req, res) => {
