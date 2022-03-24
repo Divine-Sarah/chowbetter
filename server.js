@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const authRoutes = require('./app/routes/auth.js')
+const { TOKEN_KEY,MONGOOSE_URL }= require('./app/config/db.config')
 
 const app = express();
 
