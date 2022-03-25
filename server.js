@@ -11,7 +11,7 @@ const app = express();
 
 let corsOptions = {
     //origin: 'http://127.0.0.1:5501',
-    origin: 'https://frontend-chowbetter.vercel.app/',
+    origin: 'https://frontend-chowbetter.vercel.app',
     methods: 'GET, HEAD, PUT, PATCH, POST, OPTIONS, DELETE',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
