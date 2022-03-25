@@ -2,7 +2,7 @@
   "name": "chowbetter",
   "version": "1.0.0",
   "description": "Hackathon ",
-  "proxy": "http://127.0.0.1:5500",
+  "proxy": "http://127.0.0.1:5501",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,7 +24,4 @@
     "multer": "^1.4.4",
     "nodemon": "^2.0.15"
   }
-  
 }
-
-

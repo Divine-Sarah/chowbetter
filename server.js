@@ -10,10 +10,10 @@ const { MONGOOSE_URL }= require('./app/config/db.config')
 const app = express();
 
 let corsOptions = {
-    origin: 'http://127.0.0.1:5500',
-methods: 'GET, HEAD, PUT, PATCH, POST, OPTIONS, DELETE',
-credentials: true,
-allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: 'http://127.0.0.1:5501',
+    methods: 'GET, HEAD, PUT, PATCH, POST, OPTIONS, DELETE',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 app.use(cors(corsOptions));
