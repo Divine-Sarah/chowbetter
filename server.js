@@ -5,13 +5,14 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const authRoutes = require('./app/routes/auth.js')
 const productRoutes = require('./app/routes/product.js')
+const farmerRoutes = require('./app/routes/farmer.js')
 const { MONGOOSE_URL }= require('./app/config/db.config')
 
 const app = express();
 
 let corsOptions = {
-    //origin: 'http://127.0.0.1:5501',
-    origin: 'https://frontend-chowbetter.vercel.app',
+    origin: 'http://127.0.0.1:5501',
+    //origin: 'https://frontend-chowbetter.vercel.app',
     methods: 'GET, HEAD, PUT, PATCH, POST, OPTIONS, DELETE',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -46,7 +47,8 @@ app.get('/', (req, res) => {
 
 //API endpoints
 app.use('/api/auth', authRoutes);
-app.use('api/product',productRoutes )
+app.use('/api/product', productRoutes )
+app.use('/api/farmer', farmerRoutes)
 
 let PORT = process.env.PORT;
 
